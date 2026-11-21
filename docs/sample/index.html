@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#1b2350">
+<title>ねこと おつきさま — AR えほんの みほん（SVG の絵）</title>
+<link rel="stylesheet" href="ehon/style.css?v=307b66c6f0">
+</head>
+<body>
+<div id="stage"></div>
+<div id="hud"></div>
+<!--
+  「ねこと おつきさま」AR 本体（スマホのカメラで 印刷したページを映す）
+  このファイルは npm run build で作られます。動かすには、同じ場所に ehon フォルダが必要です。
+  絵本の中身は ehon/book.js、プログラムは ehon/engine.js にあります（元は books/ と system/engine/）。
+-->
+<script src="ehon/three.js?v=8c4e8554e2"></script>
+<script src="ehon/mindar.js?v=d4a8a8ebb4"></script>
+<script src="ehon/licenses.js?v=ae9d91f9fd"></script>
+<script src="ehon/pictures.js?v=8deb5ccae3"></script>
+<script src="ehon/nurie.js?v=49d08f17c1"></script>
+<script src="ehon/book.js?v=9c1de7dba6"></script>
+<script src="ehon/engine.js?v=2a05d172c9"></script>
+<script>
+  if (window.EhonEngine) EhonEngine.start({ mode: 'ar', mind: 'ehon/targets.mind?v=250cf60474' });
+  else document.body.insertAdjacentHTML('beforeend', '<p style="margin:2em;font:16px/1.7 sans-serif;color:#fff">ehon フォルダが 見つかりません。<br>この ファイルと いっしょに ehon フォルダも おいて（アップロードして）ください。</p>');
+</script>
+</body>
+</html>
