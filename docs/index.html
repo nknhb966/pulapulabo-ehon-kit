@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>越前市ぷらぷらぼ AR えほんキット — 見本「ねこと おつきさま」</title>
+<style>
+  :root { --ink:#3b2e5a; --cream:#fff8e8; --line:#e8b85c; --sky:#1b2350; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Hiragino Maru Gothic ProN","Zen Maru Gothic","Yu Gothic",sans-serif; color:var(--ink);
+         background:linear-gradient(#1b2350,#3b3f8f 60%,#6a5aa3); min-height:100vh; }
+  main { max-width:760px; margin:0 auto; padding:28px 18px 60px; }
+  .card { background:var(--cream); border:4px solid var(--line); border-radius:22px; padding:22px 22px 18px; margin:0 0 18px; box-shadow:0 8px 0 rgba(0,0,0,.18); }
+  h1 { color:#fff; font-size:26px; margin:8px 4px 4px; letter-spacing:.04em; }
+  .sub { color:#e9e4ff; margin:0 4px 18px; }
+  h2 { font-size:19px; margin:0 0 10px; }
+  img.page { width:100%; border-radius:12px; border:3px solid #fff; display:block; margin:6px 0 4px; }
+  .btns { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 4px; }
+  a.btn { display:inline-block; padding:12px 18px; border-radius:999px; background:#ffd447; color:var(--ink); font-weight:700; text-decoration:none; border:3px solid #c99a14; }
+  a.btn.sub2 { background:#fff; border-color:#b9b0d8; }
+  /* the two kits: Claude (the main one) and ChatGPT */
+  .dls { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:14px 0 6px; }
+  .dl { background:#fff; border:2px solid #eadfc4; border-radius:16px; padding:12px 12px 10px; }
+  .dl a.btn { display:block; text-align:center; }
+  .dl.main a.btn { font-size:17px; padding:12px 16px; }
+  .dl a.btn .size { display:block; font-size:12px; font-weight:400; margin-top:1px; }
+  .dl p { margin:8px 2px 0; font-size:13px; line-height:1.6; }
+  .dl code { font-family:ui-monospace,monospace; font-size:12px; word-break:break-all; }
+  ol.ways .which { display:inline-block; margin-left:4px; font-size:12px; font-weight:700; padding:1px 8px; border-radius:999px; background:#ffd447; }
+  ol.ways .which.gpt { background:#e7e2fb; }
+  /* which AI plan to use (the details are in the repository's README) */
+  .plan { background:#fff4cf; border-radius:12px; padding:8px 12px; margin:10px 0 6px; font-size:13px; line-height:1.7; }
+  .plan a { color:var(--ink); font-weight:700; }
+  @media (max-width:560px) { .dls { grid-template-columns:1fr; } }
+  ol { padding-left:1.3em; margin:6px 0; line-height:1.9; }
+  ol.ways li { margin:0 0 8px; line-height:1.6; }
+  .url { font-family:ui-monospace,monospace; background:#fff; border:2px dashed #b9b0d8; border-radius:10px; padding:8px 10px; word-break:break-all; }
+  small { color:#6b6290; }
+  footer { color:#d8d2f2; font-size:13px; margin-top:24px; text-align:center; }
+  footer a { color:#fff; }
+</style>
+</head>
+<body>
+<main>
+  <h1>越前市ぷらぷらぼ AR えほんキット</h1>
+  <p class="sub">印刷した絵本のページをスマホで映すと、絵が飛び出して、さわって遊べます。</p>
+
+  <section class="card">
+    <h2>見本「ねこと おつきさま」（4ページ）</h2>
+    <img class="page" src="sample/print/demo-page1.jpg" alt="見本の 1ページめ">
+    <ol>
+      <li>印刷用 PDF を A4 横・「実際のサイズ」で印刷します（パソコンの画面に PDF を出しておくだけでも試せます）</li>
+      <li>スマホで下の「カメラで見る」を開き、「カメラで はじめる」→ ページを映します</li>
+    </ol>
+    <div class="btns">
+      <a class="btn" href="sample/">カメラで見る（AR）</a>
+      <a class="btn sub2" href="sample/preview.html">カメラなしで見る</a>
+      <a class="btn sub2" href="sample/print/sample-svg_A4.pdf">印刷用 PDF</a>
+    </div>
+    <p><small>スマホで開くときのアドレス</small></p>
+    <div class="url" id="url">sample/</div>
+  </section>
+
+  <section class="card" id="make">
+    <h2>自分の AR 絵本を作るには</h2>
+    <p>作りかたは 4つ。作りかたに 合う キットを ダウンロードします。</p>
+    <ol class="ways">
+      <li><b>Claude で作る</b>（いちばん かんたん）<span class="which">Claude 用キット</span><br>Claude の新しいチャットにキットを添付して送ると、質問に こたえるだけで 絵本ができます</li>
+      <li><b>Claude で作って、絵を自分で描く</b><span class="which">Claude 用キット</span><br>できた絵本の下絵（PNG）に、お絵かきアプリで 自分の絵を描いて 入れかえます</li>
+      <li><b>ChatGPT で作る</b>（1. と 2. の ChatGPT 版）<span class="which gpt">ChatGPT 用キット</span><br>ChatGPT の新しいチャットに ChatGPT 用の キットを 添付して送ると、質問に こたえるだけで 絵本ができます。絵を自分で描いて 入れかえることも できます</li>
+      <li><b>ぜんぶ自分で作る</b>（自分のパソコン。AI は 使いません）<span class="which">Claude 用キット</span><br>Node.js と VS Code を入れて、説明書を見ながら作ります。キットは Claude 用と 同じものを 使います</li>
+    </ol>
+    <div class="dls">
+      <div class="dl main">
+        <a class="btn" id="dl" href="#">⬇ Claude 用キット<span class="size">約 5 MB</span></a>
+        <p><code>pulapulabo-ehon-maker.zip</code><br>自分のパソコンで作るときも、こちら</p>
+      </div>
+      <div class="dl">
+        <a class="btn sub2" id="dlgpt" href="#">⬇ ChatGPT 用キット<span class="size">約 22 MB</span></a>
+        <p><code>pulapulabo-ehon-maker-chatgpt.zip</code><br>ChatGPT の中で使う 道具を はじめから 入れてあるので 大きめです</p>
+      </div>
+    </div>
+    <p class="plan">おすすめは 有料プラン（Claude は Pro 以上で Opus、ChatGPT は Plus 以上で Thinking）です。無料プランでも 作れることが ありますが、仕上がりは 落ちやすく なります。<a id="plan" href="#">くわしくは「AI の プランと 設定」</a></p>
+    <p><small>できた ZIP の中身を 自分の GitHub（または https で開ける ほかの場所）に置くと 公開できます。</small></p>
+    <div class="btns">
+      <a class="btn sub2" id="repo" href="#">くわしい作りかた（GitHub）</a>
+    </div>
+  </section>
+
+  <footer>越前市ぷらぷらぼ AR えほんキット（MIT License）。three.js・MindAR・Zen Maru Gothic を使っています（<a href="sample/THIRD_PARTY_LICENSES.txt">ライセンス表示</a>）。</footer>
+</main>
+<script>
+  // address of the AR page, and links back to the GitHub repository (worked out from https://<owner>.github.io/<repo>/)
+  var here = location.href.replace(/[^/]*$/, '');
+  document.getElementById('url').textContent = here + 'sample/';
+  var m = location.hostname.match(/^([^.]+)\.github\.io$/), repo = location.pathname.split('/')[1];
+  if (m && repo) {
+    var base = 'https://github.com/' + m[1] + '/' + repo;
+    document.getElementById('repo').href = base + '#readme';
+    document.getElementById('plan').href = base + '#ai-の-プランと-設定';   // the heading "AI の プランと 設定" in README.md
+    document.getElementById('dl').href = base + '/raw/main/pulapulabo-ehon-maker.zip';
+    var gpt = document.getElementById('dlgpt');   // (in the repository, or — over 25 MB — on its Releases page)
+    if (gpt) gpt.href = base + '/raw/main/pulapulabo-ehon-maker-chatgpt.zip';
+  } else {
+    document.getElementById('make').querySelectorAll('a').forEach(function (a) { a.removeAttribute('href'); a.style.opacity = .5; });
+  }
+</script>
+</body>
+</html>
